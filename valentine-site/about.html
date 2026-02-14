@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 25px;
+            width: 85%;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: white;
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .para {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .flowers {
+            margin-top: 25px;
+            font-size: 24px;
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: #ff4d88;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #e6005c;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 18px;
+            animation: float 6s linear infinite;
+            color: white;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="about-card">
+    <h1> FOR YOU! 💌</h1>
+
+    <p class="para">
+        
+        BABYYYYYYYYYYY I just want to start this by saying I LOVEEEEEEEE YOUUUUUUUUUUU SOOOOOOOOOO MUCHHHHHHHHHH. I AM JUST SOOOOOO GRATEFUL I HAVE YOUUUUU. YOU TAUGHT ME A LOT OF THINGSSSS, A LOT MORE THAN I’VE LEARNED IN ALL THESE YEARSSS. EVEN IF IT’S BEEN A VERY SHORT TIME SINCE WE MET AND STARTED DATING, IT FEELS LIKE WE’VE ALREADY SPENT YEARS TOGETHER. YOU ARE MIRACLE TO MEEE <br>
+
+I LOVE YOU FOR THE AMAZING INDIVIDUAL YOU AREEEEE, YOU MAKE ME FEEL ALOT MORE STRONG (yes, you are the secret of my energy!! loliesss) AND
+
+YOU MAKE ME FEEEEEL SOOOOOOO CALM, SO SOFT, SO DELICATE, SO LOVELY, SO FRAGILE. I HOPE WE ALWAYS STAY LIKE THIS THROUGH HARDSHIPS, LAUGHS, SORROWS, THROUGH EACH OTHER’S EVERY PHASE. I HOPE WE NEVER LEAVE EACH OTHER’S SIDE.<br>
+
+I WANT TO MARRY YOU!!!!!!!!! ONLY YOUUUU BUAHAHAHAHAHAHA!!<br>
+
+ONCE AGAIN, HAPPY VALENTINE’S DAYYY BABYYY!! I WANT TO CELEBRATE EVERY VALENTINE’S DAY WITH YOU (GO ON DATES LEAVING OUR KIDS HOME HEHE). SAYING THIS WITH MY WHOLE BODY BTWWW LMAOOOO.
+    </p>
+
+    <div class="flowers">  MWUAHHHHHHH 😘😘❤️❤️ </div>
+</div>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerText = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 600);
+</script>
+
+</body>
+</html>
