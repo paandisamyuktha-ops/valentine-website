@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Valentine 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 40px 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 10px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        section {
+            padding: 30px 20px;
+        }
+
+        .gallery img {
+            width: 250px;
+            border-radius: 20px;
+            margin: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background-color: #ff4d88;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: #e6005c;
+        }
+
+        footer {
+            padding: 15px;
+            color: white;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            color: white;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .popup h2 {
+            color: #ff4d88;
+            display: none;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+        }
+
+        .burst-heart {
+    position: fixed;
+    font-size: 20px;
+    animation: burst 1s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes burst {
+    0% {
+        transform: scale(0.5) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5) translate(var(--x), var(--y));
+        opacity: 0;
+    }
+}
+    </style>
+</head>
+<body>
+<header>
+    <h1>Happy Valentine's Day Babyyy 💕</h1>
+    <p> MMMWWUUUAAAHHHH </p>
+    <nav>
+        <a href="C:\Users\Samyuktha\OneDrive\Desktop\HTML AHEM\about.html">About Us</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>MY BABY BOYYYYY </h2>
+    <p>Swans choose one partner for life… <br> will you be my swan forever? 🦢.</p>
+    <br>
+    </section>
+
+<!-- Popup HTML -->
+<button onclick="checkPassword()">Open Surprise </button>
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+     <p id="loveReason"> Click the button below to see why i love you.</p>
+      <button onclick="generateReason()">Tell Me Why </button>
+    <button onclick="closePopup()">Close</button>
+</div>
+
+<!-- 👇 PASTE THE SCRIPT RIGHT HERE -->
+<script>
+    const correctPassword = "010126"; 
+    // Change to your real anniversary (DDMMYY)
+
+    function checkPassword() {
+        let userInput = prompt("Enter our anniversary date (DDMM) 💌");
+
+        if (userInput === correctPassword) {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        } else {
+            alert("Wrong date 😌 Try again.");
+        }
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+ 
+    const reasons = [
+        "The way you reassure me when I overthink.",
+        "Your calm energy makes everything feel safe.",
+        "I like your kissiesss hehe",
+        "Your laugh is my favorite sound.",
+        "the way you are always optimistic .",
+        "The way you support my goals or whatever i wanna do.",
+        "You choose me consistently.",
+        "Your random cute texts make my whole day.",
+        "You respect me. And that means everything.",
+        "Because loving you feels peaceful, not chaotic(or maybe both hehe)."
+        "I the way you are so clear about our future."
+    ];
+
+    function generateReason() {
+    const randomIndex = Math.floor(Math.random() * reasons.length);
+    document.getElementById("loveReason").innerText = reasons[randomIndex];
+
+    createHeartBurst();
+    }
+function createHeartBurst() {
+    for (let i = 0; i < 12; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("burst-heart");
+        heart.innerText = "🍑";
+
+        heart.style.left = "50%";
+        heart.style.top = "50%";
+
+        const x = (Math.random() - 0.5) * 300 + "px";
+        const y = (Math.random() - 0.5) * 300 + "px";
+
+        heart.style.setProperty("--x", x);
+        heart.style.setProperty("--y", y);
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 1000);
+    }
+}
+</script>
+
+
+
+<section id="memories">
+    <h2>Our Memories 📸</h2>
+    <div class="gallery">
+        <img src="C:\Users\Samyuktha\OneDrive\Pictures\Screenshots\photo1.jpeg" alt="Photo1">
+        <img src="C:\Users\Samyuktha\OneDrive\Pictures\Screenshots\photo2.jpeg" alt="Photo2">
+        <img src="C:\Users\Samyuktha\OneDrive\Pictures\Screenshots\photo3.jpeg" alt="Photo3">
+        <img src="C:\Users\Samyuktha\OneDrive\Pictures\Screenshots\photo4.jpeg" alt="Photo4">
+
+    </div>
+</section>
+
+
+<footer>
+    Made with love 💞
+</footer>
+
+
+<!-- Floating Hearts Script -->
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerText = "💗";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
